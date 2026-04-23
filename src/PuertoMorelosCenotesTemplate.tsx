@@ -64,7 +64,7 @@ export default function PuertoMorelosCenotesTemplate() {
       <header className="fixed inset-x-0 top-0 z-50">
         <div className="mx-auto flex max-w-7xl items-center justify-between bg-black/25 px-6 py-4 text-white backdrop-blur-md">
           <div>
-            <div className="text-xl font-semibold tracking-wide">Puerto Morelos Cenotes</div>
+            <div className="text-xl font-semibold tracking-wide">Puerto Morelos Cenote Maravilla</div>
             <div className="text-xs uppercase tracking-[0.25em] text-white/80">
               Nature • Jungle • Riviera Maya
             </div>
@@ -76,6 +76,12 @@ export default function PuertoMorelosCenotesTemplate() {
             </a>
             <a href="#cenotes" className="transition hover:text-emerald-300">
               Cenotes
+            </a>
+            <a href="#caballos" className="transition hover:text-emerald-300">
+              Caballos
+            </a>
+            <a href="#habitaciones" className="transition hover:text-emerald-300">
+              Habitaciones
             </a>
             <a href="#experience" className="transition hover:text-emerald-300">
               Experience / Experiencia
