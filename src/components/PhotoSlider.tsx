@@ -1,17 +1,23 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useLanguage } from "./LanguageProvider";
 
 type PhotoSliderProps = {
   images: string[];
 };
 
 export default function PhotoSlider({ images }: PhotoSliderProps) {
+  const { lang } = useLanguage();
   const safeImages = useMemo(() => images.filter(Boolean), [images]);
   const [index, setIndex] = useState(0);
 
   if (safeImages.length === 0) {
-    return <p className="text-center text-slate-600">Aucune photo disponible pour le moment.</p>;
+    return (
+      <p className="text-center text-slate-600">
+        {lang === "es" ? "No hay fotos disponibles por el momento." : "No photos available at the moment."}
+      </p>
+    );
   }
 
   const prev = () => setIndex((i) => (i === 0 ? safeImages.length - 1 : i - 1));
@@ -23,7 +29,7 @@ export default function PhotoSlider({ images }: PhotoSliderProps) {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={safeImages[index]}
-          alt={`Photo ${index + 1}`}
+          alt={`${lang === "es" ? "Foto" : "Photo"} ${index + 1}`}
           className="h-[62vh] min-h-[360px] w-full object-cover"
         />
 
@@ -33,7 +39,7 @@ export default function PhotoSlider({ images }: PhotoSliderProps) {
             onClick={prev}
             className="rounded-full border border-white/50 px-4 py-1.5 text-sm transition hover:bg-white hover:text-black"
           >
-            Prev
+            {lang === "es" ? "Anterior" : "Prev"}
           </button>
           <span className="text-sm font-medium">
             {index + 1} / {safeImages.length}
@@ -43,7 +49,7 @@ export default function PhotoSlider({ images }: PhotoSliderProps) {
             onClick={next}
             className="rounded-full border border-white/50 px-4 py-1.5 text-sm transition hover:bg-white hover:text-black"
           >
-            Next
+            {lang === "es" ? "Siguiente" : "Next"}
           </button>
         </div>
       </div>
