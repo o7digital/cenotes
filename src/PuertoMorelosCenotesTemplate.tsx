@@ -47,6 +47,10 @@ export default function PuertoMorelosCenotesTemplate() {
     },
   ];
 
+  const caballosPhotos = Array.from({ length: 35 }, (_, i) =>
+    `/caballos/photos/caballos-photo-${String(i + 1).padStart(3, "0")}.jpeg`
+  );
+
   const experiences = [
     {
       en: "Freshwater swimming",
@@ -223,6 +227,34 @@ export default function PuertoMorelosCenotesTemplate() {
                   </a>
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="caballos" className="bg-stone-50 py-24">
+        <div className="mx-auto max-w-7xl px-6">
+          <div className="max-w-2xl">
+            <div className="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-700">
+              Caballos
+            </div>
+            <h2 className="mt-4 text-4xl font-semibold md:text-5xl">
+              Caballos / Horse Experience
+            </h2>
+            <p className="mt-5 text-lg leading-8 text-slate-600">
+              Recorridos y convivencia con caballos en un entorno natural de Puerto Morelos.
+            </p>
+          </div>
+
+          <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+            {caballosPhotos.map((photo) => (
+              <article
+                key={photo}
+                className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={photo} alt="Caballos en Cenote Maravilla" className="h-44 w-full object-cover" />
+              </article>
             ))}
           </div>
         </div>
