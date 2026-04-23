@@ -29,9 +29,6 @@ export default function SiteHeader({ ctaHref = "#contact" }: SiteHeaderProps) {
           <a href="/#experience" className="transition hover:text-emerald-300">
             Experience / Experiencia
           </a>
-          <a href="/nouvelles" className="transition hover:text-emerald-300">
-            Nouvelles
-          </a>
           <a href="/#contact" className="transition hover:text-emerald-300">
             Contact / Contacto
           </a>
