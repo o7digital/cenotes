@@ -1,4 +1,19 @@
+import SiteFooter from "./components/SiteFooter";
+import SiteHeader from "./components/SiteHeader";
+
 export default function PuertoMorelosCenotesTemplate() {
+  const cenotePhotos = [
+    "/cenotes/photos/cenotes-photo-001.jpeg",
+    "/cenotes/photos/cenotes-photo-002.jpeg",
+    "/cenotes/photos/cenotes-photo-003.jpeg",
+    "/cenotes/photos/cenotes-photo-004.jpeg",
+    "/cenotes/photos/cenotes-photo-005.jpeg",
+    "/cenotes/photos/cenotes-photo-006.jpeg",
+    "/cenotes/photos/cenotes-photo-007.jpeg",
+    "/cenotes/photos/cenotes-photo-008.jpeg",
+    "/cenotes/photos/cenotes-photo-009.jpeg",
+  ];
+
   const cenotes = [
     {
       nameEn: "Verde Escondido Cenote",
@@ -61,44 +76,7 @@ export default function PuertoMorelosCenotesTemplate() {
 
   return (
     <div className="min-h-screen bg-white text-slate-900">
-      <header className="fixed inset-x-0 top-0 z-50">
-        <div className="mx-auto flex max-w-7xl items-center justify-between bg-black/25 px-6 py-4 text-white backdrop-blur-md">
-          <div>
-            <div className="text-xl font-semibold tracking-wide">Puerto Morelos Cenote Maravilla</div>
-            <div className="text-xs uppercase tracking-[0.25em] text-white/80">
-              Nature • Jungle • Riviera Maya
-            </div>
-          </div>
-
-          <nav className="hidden gap-8 text-sm md:flex">
-            <a href="#about" className="transition hover:text-emerald-300">
-              About / Nosotros
-            </a>
-            <a href="#cenotes" className="transition hover:text-emerald-300">
-              Cenotes
-            </a>
-            <a href="#caballos" className="transition hover:text-emerald-300">
-              Caballos
-            </a>
-            <a href="#habitaciones" className="transition hover:text-emerald-300">
-              Habitaciones
-            </a>
-            <a href="#experience" className="transition hover:text-emerald-300">
-              Experience / Experiencia
-            </a>
-            <a href="#contact" className="transition hover:text-emerald-300">
-              Contact / Contacto
-            </a>
-          </nav>
-
-          <a
-            href="#contact"
-            className="rounded-full border border-white/30 bg-white/10 px-5 py-2 text-sm font-medium text-white transition hover:bg-white hover:text-slate-900"
-          >
-            Book now / Reserva
-          </a>
-        </div>
-      </header>
+      <SiteHeader ctaHref="/#contact" />
 
       <section className="relative flex min-h-screen items-center overflow-hidden">
         <div
@@ -221,12 +199,17 @@ export default function PuertoMorelosCenotesTemplate() {
           </div>
 
           <div className="mt-12 grid gap-8 md:grid-cols-3">
-            {cenotes.map((cenote) => (
+            {cenotes.map((cenote, index) => (
               <div
                 key={cenote.nameEn}
                 className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl"
               >
-                <div className="h-64 bg-[linear-gradient(135deg,#064e3b,#10b981,#99f6e4)]" />
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={cenotePhotos[index % cenotePhotos.length]}
+                  alt={cenote.nameEs}
+                  className="h-64 w-full object-cover"
+                />
                 <div className="p-6">
                   <div className="inline-block rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
                     {cenote.tagEn} / {cenote.tagEs}
@@ -311,6 +294,7 @@ export default function PuertoMorelosCenotesTemplate() {
           </div>
         </div>
       </section>
+      <SiteFooter />
     </div>
   );
 }
