@@ -2,10 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --sand: #f6f2e9;
+  --jungle: #0f5b4d;
+}
+
 html,
 body {
   margin: 0;
   padding: 0;
+  background: var(--sand);
 }
 
 * {
