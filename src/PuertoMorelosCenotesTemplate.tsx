@@ -1,6 +1,7 @@
 "use client";
 
 import { useLanguage } from "./components/LanguageProvider";
+import PhotoSlider from "./components/PhotoSlider";
 import SiteFooter from "./components/SiteFooter";
 import SiteHeader from "./components/SiteHeader";
 
@@ -28,6 +29,9 @@ export default function PuertoMorelosCenotesTemplate() {
       lang === "es"
         ? "Recorridos y convivencia con caballos en un entorno natural de Puerto Morelos."
         : "Horse experiences in a natural setting in Puerto Morelos.",
+    horsePackagesKicker: lang === "es" ? "Tarifas" : "Pricing",
+    horsePackagesTitle: lang === "es" ? "Paquetes de Caballos" : "Horse Packages",
+    quoteWhatsapp: lang === "es" ? "Cotizar por WhatsApp" : "Quote on WhatsApp",
     expTitle: lang === "es" ? "Lo que puedes promocionar en este sitio" : "What you can promote on this site",
     expKicker: lang === "es" ? "Experiencia" : "Experience",
     contactKicker: lang === "es" ? "Contacto" : "Contact",
@@ -91,6 +95,43 @@ export default function PuertoMorelosCenotesTemplate() {
           "Private or group tours",
           "Photo moments in a natural setting",
           "Local discovery from the Riviera Maya",
+        ];
+
+  const horsePackages =
+    lang === "es"
+      ? [
+          {
+            name: "Paseo Básico",
+            details: "Recorrido guiado a caballo por senderos naturales (30 min).",
+            price: "Desde $450 MXN / persona",
+          },
+          {
+            name: "Paseo Aventura",
+            details: "Ruta extendida con paradas para fotos y descanso (60 min).",
+            price: "Desde $750 MXN / persona",
+          },
+          {
+            name: "Paquete Privado",
+            details: "Experiencia exclusiva para pareja, familia o grupo pequeño.",
+            price: "Cotización personalizada",
+          },
+        ]
+      : [
+          {
+            name: "Basic Ride",
+            details: "Guided horseback trail through natural paths (30 min).",
+            price: "From $450 MXN / person",
+          },
+          {
+            name: "Adventure Ride",
+            details: "Extended route with photo and rest stops (60 min).",
+            price: "From $750 MXN / person",
+          },
+          {
+            name: "Private Package",
+            details: "Exclusive experience for couples, families, or small groups.",
+            price: "Custom quote",
+          },
         ];
 
   return (
@@ -169,13 +210,31 @@ export default function PuertoMorelosCenotesTemplate() {
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="text-4xl font-semibold md:text-5xl">{t.caballosTitle}</h2>
           <p className="mt-4 text-lg leading-8 text-slate-600">{t.caballosSub}</p>
-          <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-            {caballosPhotos.map((photo) => (
-              <article key={photo} className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={photo} alt="Caballos" className="h-44 w-full object-cover" />
-              </article>
-            ))}
+          <div className="mt-12">
+            <PhotoSlider images={caballosPhotos} />
+          </div>
+
+          <div className="mt-14">
+            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-amber-700">{t.horsePackagesKicker}</p>
+            <h3 className="mt-3 text-3xl font-semibold md:text-4xl">{t.horsePackagesTitle}</h3>
+
+            <div className="mt-8 grid gap-5 md:grid-cols-3">
+              {horsePackages.map((pkg) => (
+                <article key={pkg.name} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+                  <h4 className="text-2xl font-semibold text-slate-900">{pkg.name}</h4>
+                  <p className="mt-3 text-lg leading-7 text-slate-600">{pkg.details}</p>
+                  <p className="mt-5 text-3xl font-semibold text-emerald-800">{pkg.price}</p>
+                  <a
+                    href="https://wa.me/"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-6 inline-block rounded-full bg-black px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
+                  >
+                    {t.quoteWhatsapp}
+                  </a>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </section>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { useLanguage } from "./LanguageProvider";
 
 type PhotoSliderProps = {
@@ -22,6 +22,14 @@ export default function PhotoSlider({ images }: PhotoSliderProps) {
 
   const prev = () => setIndex((i) => (i === 0 ? safeImages.length - 1 : i - 1));
   const next = () => setIndex((i) => (i === safeImages.length - 1 ? 0 : i + 1));
+
+  useEffect(() => {
+    if (safeImages.length <= 1) return;
+    const timer = window.setInterval(() => {
+      setIndex((i) => (i === safeImages.length - 1 ? 0 : i + 1));
+    }, 5000);
+    return () => window.clearInterval(timer);
+  }, [safeImages.length]);
 
   return (
     <div className="space-y-4">
@@ -54,21 +62,6 @@ export default function PhotoSlider({ images }: PhotoSliderProps) {
         </div>
       </div>
 
-      <div className="grid grid-cols-4 gap-2 md:grid-cols-8">
-        {safeImages.slice(0, 16).map((src, thumbIndex) => (
-          <button
-            key={src}
-            type="button"
-            onClick={() => setIndex(thumbIndex)}
-            className={`overflow-hidden rounded-xl border ${
-              thumbIndex === index ? "border-emerald-400" : "border-white/30"
-            }`}
-          >
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src={src} alt={`Miniature ${thumbIndex + 1}`} className="h-16 w-full object-cover" />
-          </button>
-        ))}
-      </div>
     </div>
   );
 }
