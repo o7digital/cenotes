@@ -28,6 +28,11 @@ const localBusinessSchema = {
     "caballos en Puerto Morelos",
     "experiencias en la selva",
     "Riviera Maya",
+    "cenote in Puerto Morelos",
+    "cenote tour Puerto Morelos",
+    "horseback riding Puerto Morelos",
+    "jungle tour Puerto Morelos",
+    "cenotes near Cancun",
   ],
 };
 
@@ -38,7 +43,7 @@ export const metadata: Metadata = {
     template: "%s | Cenote Maravilla",
   },
   description:
-    "Cenote Maravilla en Puerto Morelos, Quintana Roo. Cenotes, caballos y experiencias en la Ruta de los Cenotes, Riviera Maya.",
+    "Discover Cenote Maravilla in Puerto Morelos, Mexico. Swim in crystal-clear cenotes, explore the Ruta de los Cenotes, enjoy horseback riding, jungle experiences and private tours in the Riviera Maya.",
   alternates: {
     canonical: "/",
     languages: {
@@ -50,11 +55,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Cenote Maravilla",
     description:
-      "Cenote Maravilla en Puerto Morelos, Quintana Roo. Cenotes, caballos y experiencias en la Ruta de los Cenotes, Riviera Maya.",
+      "Discover Cenote Maravilla in Puerto Morelos, Mexico. Swim in crystal-clear cenotes, explore the Ruta de los Cenotes, enjoy horseback riding, jungle experiences and private tours in the Riviera Maya.",
     url: "https://www.cenotemaravilla.online/",
     type: "website",
     siteName: "Cenote Maravilla",
-    locale: "es_MX",
+    locale: "en_US",
     images: [
       {
         url: "https://www.cenotemaravilla.online/og-image.jpg",
@@ -66,7 +71,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Cenote Maravilla",
     description:
-      "Cenote Maravilla en Puerto Morelos, Quintana Roo. Cenotes, caballos y experiencias en la Ruta de los Cenotes, Riviera Maya.",
+      "Discover Cenote Maravilla in Puerto Morelos, Mexico. Swim in crystal-clear cenotes, explore the Ruta de los Cenotes, enjoy horseback riding, jungle experiences and private tours in the Riviera Maya.",
     images: ["https://www.cenotemaravilla.online/og-image.jpg"],
   },
 };
