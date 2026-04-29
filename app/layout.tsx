@@ -36,6 +36,54 @@ const localBusinessSchema = {
   ],
 };
 
+const touristAttractionSchema = {
+  "@context": "https://schema.org",
+  "@type": "TouristAttraction",
+  name: "Cenote Maravilla",
+  url: "https://www.cenotemaravilla.online/",
+  description:
+    "Natural cenote attraction in Puerto Morelos with swimming, horseback riding and jungle experiences.",
+  image: "https://www.cenotemaravilla.online/og-image.webp",
+  touristType: ["Families", "Couples", "Groups", "Adventure Travelers"],
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Puerto Morelos",
+    addressRegion: "Quintana Roo",
+    addressCountry: "MX",
+  },
+};
+
+const faqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Where is Cenote Maravilla located?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Cenote Maravilla is located in Puerto Morelos, on the Ruta de los Cenotes in the Riviera Maya, Mexico.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What experiences are available?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Visitors can swim in crystal-clear cenote water, enjoy horseback riding and book private jungle experiences.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Is Cenote Maravilla suitable for families and groups?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Yes, experiences can be adapted for families, couples and groups.",
+      },
+    },
+  ],
+};
+
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.cenotemaravilla.online"),
   title: {
@@ -87,6 +135,14 @@ export default function RootLayout({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(touristAttractionSchema) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
         />
       </head>
       <body>
