@@ -5,6 +5,36 @@ export const metadata: Metadata = {
   title: "Cenotes in Puerto Morelos | Cenote Maravilla",
   description:
     "Discover cenotes in Puerto Morelos on the Ruta de los Cenotes. Plan swimming, nature and private cenote experiences at Cenote Maravilla.",
+  alternates: {
+    canonical: "/cenotes-puerto-morelos",
+    languages: {
+      en: "/cenotes-puerto-morelos",
+      es: "/es/cenotes-puerto-morelos",
+      "x-default": "/cenotes-puerto-morelos",
+    },
+  },
+  openGraph: {
+    title: "Cenotes in Puerto Morelos | Cenote Maravilla",
+    description:
+      "Discover cenotes in Puerto Morelos on the Ruta de los Cenotes. Plan swimming, nature and private cenote experiences at Cenote Maravilla.",
+    url: "https://www.cenotemaravilla.online/cenotes-puerto-morelos",
+    locale: "en_US",
+    type: "website",
+    siteName: "Cenote Maravilla",
+    images: [
+      {
+        url: "https://www.cenotemaravilla.online/og-image.webp",
+        alt: "Cenotes in Puerto Morelos, Cenote Maravilla",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cenotes in Puerto Morelos | Cenote Maravilla",
+    description:
+      "Discover cenotes in Puerto Morelos on the Ruta de los Cenotes. Plan swimming, nature and private cenote experiences at Cenote Maravilla.",
+    images: ["https://www.cenotemaravilla.online/og-image.webp"],
+  },
 };
 
 export default function CenotesPuertoMorelosPage() {

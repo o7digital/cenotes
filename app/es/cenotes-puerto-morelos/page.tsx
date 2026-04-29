@@ -5,6 +5,36 @@ export const metadata: Metadata = {
   title: "Cenotes en Puerto Morelos | Cenote Maravilla",
   description:
     "Descubre cenotes en Puerto Morelos sobre la Ruta de los Cenotes. Planea tu visita de nado, naturaleza y experiencias privadas en Cenote Maravilla.",
+  alternates: {
+    canonical: "/es/cenotes-puerto-morelos",
+    languages: {
+      en: "/cenotes-puerto-morelos",
+      es: "/es/cenotes-puerto-morelos",
+      "x-default": "/cenotes-puerto-morelos",
+    },
+  },
+  openGraph: {
+    title: "Cenotes en Puerto Morelos | Cenote Maravilla",
+    description:
+      "Descubre cenotes en Puerto Morelos sobre la Ruta de los Cenotes. Planea tu visita de nado, naturaleza y experiencias privadas en Cenote Maravilla.",
+    url: "https://www.cenotemaravilla.online/es/cenotes-puerto-morelos",
+    locale: "es_MX",
+    type: "website",
+    siteName: "Cenote Maravilla",
+    images: [
+      {
+        url: "https://www.cenotemaravilla.online/og-image.webp",
+        alt: "Cenotes en Puerto Morelos, Cenote Maravilla",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cenotes en Puerto Morelos | Cenote Maravilla",
+    description:
+      "Descubre cenotes en Puerto Morelos sobre la Ruta de los Cenotes. Planea tu visita de nado, naturaleza y experiencias privadas en Cenote Maravilla.",
+    images: ["https://www.cenotemaravilla.online/og-image.webp"],
+  },
 };
 
 export default function CenotesPuertoMorelosEsPage() {
@@ -16,7 +46,7 @@ export default function CenotesPuertoMorelosEsPage() {
           Cenote Maravilla ofrece una experiencia natural en Puerto Morelos, sobre la famosa Ruta de los Cenotes.
           Disfruta nado en agua cristalina, paisaje de selva y experiencias privadas en la Riviera Maya.
         </p>
-        <h2 className="mt-10 text-2xl font-semibold">Por que elegir Cenote Maravilla</h2>
+        <h2 className="mt-10 text-2xl font-semibold">Por qué elegir Cenote Maravilla</h2>
         <ul className="mt-4 list-disc pl-6 text-slate-600">
           <li>Entorno natural de cenote en Puerto Morelos</li>
           <li>Experiencias para familias, parejas y grupos</li>

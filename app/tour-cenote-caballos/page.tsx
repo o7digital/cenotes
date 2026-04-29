@@ -5,6 +5,36 @@ export const metadata: Metadata = {
   title: "Cenote and Horse Riding Tour | Puerto Morelos",
   description:
     "Book a cenote and horseback riding tour in Puerto Morelos. Combine freshwater swimming, jungle trails and private nature experiences in the Riviera Maya.",
+  alternates: {
+    canonical: "/tour-cenote-caballos",
+    languages: {
+      en: "/tour-cenote-caballos",
+      es: "/es/tour-cenote-caballos",
+      "x-default": "/tour-cenote-caballos",
+    },
+  },
+  openGraph: {
+    title: "Cenote and Horse Riding Tour | Puerto Morelos",
+    description:
+      "Book a cenote and horseback riding tour in Puerto Morelos. Combine freshwater swimming, jungle trails and private nature experiences in the Riviera Maya.",
+    url: "https://www.cenotemaravilla.online/tour-cenote-caballos",
+    locale: "en_US",
+    type: "website",
+    siteName: "Cenote Maravilla",
+    images: [
+      {
+        url: "https://www.cenotemaravilla.online/og-image.webp",
+        alt: "Cenote and horse riding tour in Puerto Morelos",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cenote and Horse Riding Tour | Puerto Morelos",
+    description:
+      "Book a cenote and horseback riding tour in Puerto Morelos. Combine freshwater swimming, jungle trails and private nature experiences in the Riviera Maya.",
+    images: ["https://www.cenotemaravilla.online/og-image.webp"],
+  },
 };
 
 export default function TourCenoteCaballosPage() {
