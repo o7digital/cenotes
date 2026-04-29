@@ -5,6 +5,97 @@ import PhotoSlider from "./components/PhotoSlider";
 import SiteFooter from "./components/SiteFooter";
 import SiteHeader from "./components/SiteHeader";
 
+const cenotePhotos = Array.from({ length: 9 }, (_, i) =>
+  `/cenotes/photos/cenotes-photo-${String(i + 1).padStart(3, "0")}.webp`
+);
+
+const caballosPhotos = Array.from({ length: 35 }, (_, i) =>
+  `/caballos/photos/caballos-photo-${String(i + 1).padStart(3, "0")}.webp`
+);
+
+const cenotes = [
+  {
+    nameEn: "Verde Escondido Cenote",
+    nameEs: "Cenote Verde Escondido",
+    descriptionEn: "An ideal natural space for swimming and relaxing.",
+    descriptionEs: "Un espacio natural ideal para nadar y relajarte.",
+    tagEn: "Nature & Swimming",
+    tagEs: "Naturaleza y nado",
+  },
+  {
+    nameEn: "Cristal Maya Cenote",
+    nameEs: "Cenote Cristal Maya",
+    descriptionEn: "Perfect for clear water, photos and a calm experience.",
+    descriptionEs: "Perfecto por su agua clara, fotos y ambiente relajado.",
+    tagEn: "Crystal Waters",
+    tagEs: "Aguas cristalinas",
+  },
+  {
+    nameEn: "Aventura Azul Cenote",
+    nameEs: "Cenote Aventura Azul",
+    descriptionEn: "A light adventure with memorable outdoor moments.",
+    descriptionEs: "Una aventura ligera con momentos inolvidables al aire libre.",
+    tagEn: "Adventure",
+    tagEs: "Aventura",
+  },
+];
+
+const experiencesByLang = {
+  es: [
+    "Nado en agua dulce",
+    "Esnórquel en cenotes",
+    "Experiencia de selva en Puerto Morelos",
+    "Tours privados o en grupo",
+    "Momentos para fotos en un entorno natural",
+    "Descubrimiento local desde la Riviera Maya",
+  ],
+  en: [
+    "Freshwater swimming",
+    "Cenote snorkeling",
+    "Jungle experience in Puerto Morelos",
+    "Private or group tours",
+    "Photo moments in a natural setting",
+    "Local discovery from the Riviera Maya",
+  ],
+} as const;
+
+const horsePackagesByLang = {
+  es: [
+    {
+      name: "Paseo Básico",
+      details: "Recorrido guiado a caballo por senderos naturales (30 min).",
+      price: "Desde $450 MXN / persona",
+    },
+    {
+      name: "Paseo Aventura",
+      details: "Ruta extendida con paradas para fotos y descanso (60 min).",
+      price: "Desde $750 MXN / persona",
+    },
+    {
+      name: "Paquete Privado",
+      details: "Experiencia exclusiva para pareja, familia o grupo pequeño.",
+      price: "Cotización personalizada",
+    },
+  ],
+  en: [
+    {
+      name: "Basic Ride",
+      details: "Guided horseback trail through natural paths (30 min).",
+      price: "From $450 MXN / person",
+    },
+    {
+      name: "Adventure Ride",
+      details: "Extended route with photo and rest stops (60 min).",
+      price: "From $750 MXN / person",
+    },
+    {
+      name: "Private Package",
+      details: "Exclusive experience for couples, families, or small groups.",
+      price: "Custom quote",
+    },
+  ],
+} as const;
+
 export default function PuertoMorelosCenotesTemplate() {
   const { lang } = useLanguage();
 
@@ -46,96 +137,8 @@ export default function PuertoMorelosCenotesTemplate() {
     moreInfo: lang === "es" ? "Más información" : "More information",
   };
 
-  const cenotePhotos = Array.from({ length: 9 }, (_, i) =>
-    `/cenotes/photos/cenotes-photo-${String(i + 1).padStart(3, "0")}.webp`
-  );
-
-  const caballosPhotos = Array.from({ length: 35 }, (_, i) =>
-    `/caballos/photos/caballos-photo-${String(i + 1).padStart(3, "0")}.webp`
-  );
-
-  const cenotes = [
-    {
-      nameEn: "Verde Escondido Cenote",
-      nameEs: "Cenote Verde Escondido",
-      descriptionEn: "An ideal natural space for swimming and relaxing.",
-      descriptionEs: "Un espacio natural ideal para nadar y relajarte.",
-      tagEn: "Nature & Swimming",
-      tagEs: "Naturaleza y nado",
-    },
-    {
-      nameEn: "Cristal Maya Cenote",
-      nameEs: "Cenote Cristal Maya",
-      descriptionEn: "Perfect for clear water, photos and a calm experience.",
-      descriptionEs: "Perfecto por su agua clara, fotos y ambiente relajado.",
-      tagEn: "Crystal Waters",
-      tagEs: "Aguas cristalinas",
-    },
-    {
-      nameEn: "Aventura Azul Cenote",
-      nameEs: "Cenote Aventura Azul",
-      descriptionEn: "A light adventure with memorable outdoor moments.",
-      descriptionEs: "Una aventura ligera con momentos inolvidables al aire libre.",
-      tagEn: "Adventure",
-      tagEs: "Aventura",
-    },
-  ];
-
-  const experiences =
-    lang === "es"
-      ? [
-          "Nado en agua dulce",
-          "Esnórquel en cenotes",
-          "Experiencia de selva en Puerto Morelos",
-          "Tours privados o en grupo",
-          "Momentos para fotos en un entorno natural",
-          "Descubrimiento local desde la Riviera Maya",
-        ]
-      : [
-          "Freshwater swimming",
-          "Cenote snorkeling",
-          "Jungle experience in Puerto Morelos",
-          "Private or group tours",
-          "Photo moments in a natural setting",
-          "Local discovery from the Riviera Maya",
-        ];
-
-  const horsePackages =
-    lang === "es"
-      ? [
-          {
-            name: "Paseo Básico",
-            details: "Recorrido guiado a caballo por senderos naturales (30 min).",
-            price: "Desde $450 MXN / persona",
-          },
-          {
-            name: "Paseo Aventura",
-            details: "Ruta extendida con paradas para fotos y descanso (60 min).",
-            price: "Desde $750 MXN / persona",
-          },
-          {
-            name: "Paquete Privado",
-            details: "Experiencia exclusiva para pareja, familia o grupo pequeño.",
-            price: "Cotización personalizada",
-          },
-        ]
-      : [
-          {
-            name: "Basic Ride",
-            details: "Guided horseback trail through natural paths (30 min).",
-            price: "From $450 MXN / person",
-          },
-          {
-            name: "Adventure Ride",
-            details: "Extended route with photo and rest stops (60 min).",
-            price: "From $750 MXN / person",
-          },
-          {
-            name: "Private Package",
-            details: "Exclusive experience for couples, families, or small groups.",
-            price: "Custom quote",
-          },
-        ];
+  const experiences = experiencesByLang[lang];
+  const horsePackages = horsePackagesByLang[lang];
 
   return (
     <div className="min-h-screen bg-white text-slate-900">
