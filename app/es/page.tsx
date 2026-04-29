@@ -6,14 +6,26 @@ export const metadata: Metadata = {
   description:
     "Descubre Cenote Maravilla en Puerto Morelos, Quintana Roo. Nado en cenote, caballos, selva y experiencias privadas en la Ruta de los Cenotes, Riviera Maya.",
   keywords: [
-    "Cenote Maravilla",
-    "Puerto Morelos",
-    "Ruta de los Cenotes",
-    "cenote Puerto Morelos",
-    "cenotes Puerto Morelos",
-    "caballos Puerto Morelos",
-    "Riviera Maya",
-    "Quintana Roo",
+    "cenote en Puerto Morelos",
+    "cenotes en Puerto Morelos",
+    "Cenote Maravilla Puerto Morelos",
+    "ruta de los cenotes Puerto Morelos",
+    "mejores cenotes en Puerto Morelos",
+    "cenote para nadar en Puerto Morelos",
+    "cenote con agua cristalina Puerto Morelos",
+    "tour cenotes Puerto Morelos",
+    "tour privado cenote Puerto Morelos",
+    "paseo a caballo Puerto Morelos",
+    "paseo a caballo en la selva Puerto Morelos",
+    "tour cenote y caballos Puerto Morelos",
+    "experiencia de selva Puerto Morelos",
+    "cenotes cerca de Cancun",
+    "cenotes Riviera Maya",
+    "mejores cenotes Riviera Maya",
+    "que hacer en Puerto Morelos",
+    "actividades en Puerto Morelos",
+    "tour cenotes Cancun",
+    "experiencias naturales Riviera Maya",
   ],
   alternates: {
     canonical: "/es/",
@@ -32,7 +44,7 @@ export const metadata: Metadata = {
     type: "website",
     images: [
       {
-        url: "https://www.cenotemaravilla.online/og-image.jpg",
+        url: "https://www.cenotemaravilla.online/og-image.webp",
         alt: "Cenote Maravilla en Puerto Morelos, Riviera Maya",
       },
     ],
@@ -42,7 +54,7 @@ export const metadata: Metadata = {
     title: "Cenote Maravilla Puerto Morelos | Ruta de los Cenotes",
     description:
       "Descubre Cenote Maravilla en Puerto Morelos, Quintana Roo. Nado en cenote, caballos, selva y experiencias privadas en la Ruta de los Cenotes, Riviera Maya.",
-    images: ["https://www.cenotemaravilla.online/og-image.jpg"],
+    images: ["https://www.cenotemaravilla.online/og-image.webp"],
   },
 };
 

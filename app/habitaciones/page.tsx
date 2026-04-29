@@ -6,7 +6,7 @@ import SiteHeader from "../../src/components/SiteHeader";
 import { useLanguage } from "../../src/components/LanguageProvider";
 
 const sliderImages = Array.from({ length: 40 }, (_, i) =>
-  `/habitaciones/photos/habitaciones-photo-${String(i + 1).padStart(3, "0")}.jpeg`
+  `/habitaciones/photos/habitaciones-photo-${String(i + 1).padStart(3, "0")}.webp`
 );
 
 export default function HabitacionesPage() {

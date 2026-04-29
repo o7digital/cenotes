@@ -16,9 +16,9 @@ export const siteContent = {
     "Actividades y tours personalizados",
   ],
   featuredMedia: {
-    heroCenote: "/cenotes/photos/cenotes-photo-004.jpeg",
-    heroRoom: "/habitaciones/photos/habitaciones-photo-012.jpeg",
-    heroHorse: "/caballos/photos/caballos-photo-008.jpeg",
+    heroCenote: "/cenotes/photos/cenotes-photo-004.webp",
+    heroRoom: "/habitaciones/photos/habitaciones-photo-012.webp",
+    heroHorse: "/caballos/photos/caballos-photo-008.webp",
   },
 } as const;
 

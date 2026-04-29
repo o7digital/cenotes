@@ -16,13 +16,7 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const pathLang = window.location.pathname.startsWith("/es") ? "es" : "en";
-    const saved = window.localStorage.getItem("site_lang");
-
-    if (saved === "es" || saved === "en") {
-      setLangState(pathLang === "es" ? "es" : saved);
-      return;
-    }
-
+    // Keep route as source of truth: "/" always English, "/es" always Spanish.
     setLangState(pathLang);
   }, []);
 

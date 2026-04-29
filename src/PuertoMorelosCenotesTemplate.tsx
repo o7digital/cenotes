@@ -9,15 +9,15 @@ export default function PuertoMorelosCenotesTemplate() {
   const { lang } = useLanguage();
 
   const t = {
-    heroBadge: lang === "es" ? "Puerto Morelos • Ruta de Cenotes • Riviera Maya" : "Puerto Morelos • Cenotes Route • Riviera Maya",
+    heroBadge: lang === "es" ? "Puerto Morelos • Ruta de Cenotes • Riviera Maya" : "Puerto Morelos · Ruta de los Cenotes · Riviera Maya",
     heroTitle:
       lang === "es"
         ? "Descubre los cenotes más hermosos de Puerto Morelos"
-        : "Discover the most beautiful cenotes in Puerto Morelos",
+        : "Discover one of the most beautiful cenote experiences in Puerto Morelos",
     heroSub:
       lang === "es"
-        ? "Experiencias premium, ecoaventuras y escapadas privadas para viajeros que buscan naturaleza y autenticidad."
-        : "Premium tours, eco-experiences and private escapes for travelers seeking nature and authenticity.",
+        ? "Nada en agua dulce cristalina, explora la belleza natural de la Ruta de los Cenotes y disfruta cabalgatas, paisajes de selva y tours privados en la Riviera Maya."
+        : "Swim in crystal-clear freshwater, explore the natural beauty of the Ruta de los Cenotes and enjoy horseback riding, jungle landscapes and private tours in the Riviera Maya.",
     ctaExplore: lang === "es" ? "Explorar cenotes" : "Explore cenotes",
     ctaContact: lang === "es" ? "Solicitar información" : "Request information",
     featured: lang === "es" ? "Experiencia destacada" : "Featured experience",
@@ -32,23 +32,26 @@ export default function PuertoMorelosCenotesTemplate() {
     horsePackagesKicker: lang === "es" ? "Tarifas" : "Pricing",
     horsePackagesTitle: lang === "es" ? "Paquetes de Caballos" : "Horse Packages",
     quoteWhatsapp: lang === "es" ? "Cotizar por WhatsApp" : "Quote on WhatsApp",
-    expTitle: lang === "es" ? "Lo que puedes promocionar en este sitio" : "What you can promote on this site",
+    expTitle: lang === "es" ? "Experiencias en Cenote Maravilla" : "Experiences at Cenote Maravilla",
     expKicker: lang === "es" ? "Experiencia" : "Experience",
     contactKicker: lang === "es" ? "Contacto" : "Contact",
-    contactTitle: lang === "es" ? "¿Listo para lanzar tu sitio de cenotes?" : "Ready to launch your cenotes site?",
+    contactTitle: "Plan your visit to Cenote Maravilla",
     name: lang === "es" ? "Nombre" : "Name",
     email: lang === "es" ? "Correo" : "Email",
-    message: lang === "es" ? "Cuéntanos sobre tu visita" : "Tell us about your visit",
+    message:
+      lang === "es"
+        ? "Contáctanos para reservar tu experiencia en cenote, tour a caballo o escapada privada en la selva en Puerto Morelos."
+        : "Contact us to book your cenote experience, horseback riding tour or private jungle escape in Puerto Morelos.",
     send: lang === "es" ? "Enviar solicitud" : "Send request",
     moreInfo: lang === "es" ? "Más información" : "More information",
   };
 
   const cenotePhotos = Array.from({ length: 9 }, (_, i) =>
-    `/cenotes/photos/cenotes-photo-${String(i + 1).padStart(3, "0")}.jpeg`
+    `/cenotes/photos/cenotes-photo-${String(i + 1).padStart(3, "0")}.webp`
   );
 
   const caballosPhotos = Array.from({ length: 35 }, (_, i) =>
-    `/caballos/photos/caballos-photo-${String(i + 1).padStart(3, "0")}.jpeg`
+    `/caballos/photos/caballos-photo-${String(i + 1).padStart(3, "0")}.webp`
   );
 
   const cenotes = [

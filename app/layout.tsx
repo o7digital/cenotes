@@ -6,7 +6,7 @@ const localBusinessSchema = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   name: "Cenote Maravilla",
-  image: "https://www.cenotemaravilla.online/og-image.jpg",
+  image: "https://www.cenotemaravilla.online/og-image.webp",
   url: "https://www.cenotemaravilla.online/",
   description:
     "Cenote Maravilla en Puerto Morelos, Quintana Roo. Cenotes, caballos y experiencias en la Ruta de los Cenotes, Riviera Maya.",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "https://www.cenotemaravilla.online/og-image.jpg",
+        url: "https://www.cenotemaravilla.online/og-image.webp",
         alt: "Cenote Maravilla in Puerto Morelos, Riviera Maya, Mexico",
       },
     ],
@@ -72,7 +72,7 @@ export const metadata: Metadata = {
     title: "Cenote Maravilla",
     description:
       "Discover Cenote Maravilla in Puerto Morelos, Mexico. Swim in crystal-clear cenotes, explore the Ruta de los Cenotes, enjoy horseback riding, jungle experiences and private tours in the Riviera Maya.",
-    images: ["https://www.cenotemaravilla.online/og-image.jpg"],
+    images: ["https://www.cenotemaravilla.online/og-image.webp"],
   },
 };
 
