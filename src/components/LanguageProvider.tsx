@@ -12,13 +12,18 @@ type LanguageContextValue = {
 const LanguageContext = createContext<LanguageContextValue | null>(null);
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("es");
+  const [lang, setLangState] = useState<Lang>("en");
 
   useEffect(() => {
+    const pathLang = window.location.pathname.startsWith("/es") ? "es" : "en";
     const saved = window.localStorage.getItem("site_lang");
+
     if (saved === "es" || saved === "en") {
-      setLangState(saved);
+      setLangState(pathLang === "es" ? "es" : saved);
+      return;
     }
+
+    setLangState(pathLang);
   }, []);
 
   const setLang = (next: Lang) => {
