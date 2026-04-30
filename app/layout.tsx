@@ -9,14 +9,33 @@ const localBusinessSchema = {
   name: "Cenote Maravilla",
   image: "https://www.cenotemaravilla.online/og-image.webp",
   url: "https://www.cenotemaravilla.online/",
+  telephone: "+52 999 123 4567",
+  email: "reservas@cenotemaravilla.online",
   description:
     "Cenote Maravilla en Puerto Morelos, Quintana Roo. Cenotes, caballos y experiencias en la Ruta de los Cenotes, Riviera Maya.",
+  priceRange: "$$",
   address: {
     "@type": "PostalAddress",
+    streetAddress: "Ruta de los Cenotes",
     addressLocality: "Puerto Morelos",
     addressRegion: "Quintana Roo",
+    postalCode: "77580",
     addressCountry: "MX",
   },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 20.8497,
+    longitude: -86.8756,
+  },
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      opens: "09:00",
+      closes: "18:00",
+    },
+  ],
+  sameAs: ["https://www.instagram.com/", "https://www.facebook.com/"],
   areaServed: [
     "Puerto Morelos",
     "Ruta de los Cenotes",

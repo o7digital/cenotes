@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useLanguage } from "./components/LanguageProvider";
 import PhotoSlider from "./components/PhotoSlider";
 import SiteFooter from "./components/SiteFooter";
@@ -196,8 +197,13 @@ export default function PuertoMorelosCenotesTemplate() {
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             {cenotes.map((cenote, index) => (
               <div key={cenote.nameEn} className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={cenotePhotos[index % cenotePhotos.length]} alt={cenote.nameEs} className="h-64 w-full object-cover" />
+                <Image
+                  src={cenotePhotos[index % cenotePhotos.length]}
+                  alt={cenote.nameEs}
+                  width={800}
+                  height={420}
+                  className="h-64 w-full object-cover"
+                />
                 <div className="p-6">
                   <div className="inline-block rounded-full bg-emerald-50 px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-700">
                     {lang === "es" ? cenote.tagEs : cenote.tagEn}
