@@ -272,14 +272,41 @@ export default function PuertoMorelosCenotesTemplate() {
             <h2 className="mt-4 text-4xl font-semibold md:text-5xl">{t.contactTitle}</h2>
           </div>
 
-          <div className="rounded-[2rem] border border-slate-200 bg-stone-50 p-8 shadow-sm">
+          <form
+            action="https://formspree.io/f/mnjwarqz"
+            method="POST"
+            className="rounded-[2rem] border border-slate-200 bg-stone-50 p-8 shadow-sm"
+          >
             <div className="space-y-5">
-              <input type="text" placeholder={t.name} className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none focus:border-emerald-500" />
-              <input type="email" placeholder={t.email} className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none focus:border-emerald-500" />
-              <textarea placeholder={t.message} rows={5} className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none focus:border-emerald-500" />
-              <button className="w-full rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90">{t.send}</button>
+              <input
+                type="text"
+                name="name"
+                required
+                placeholder={t.name}
+                className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none focus:border-emerald-500"
+              />
+              <input
+                type="email"
+                name="email"
+                required
+                placeholder={t.email}
+                className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none focus:border-emerald-500"
+              />
+              <textarea
+                name="message"
+                required
+                placeholder={t.message}
+                rows={5}
+                className="w-full rounded-2xl border border-slate-200 bg-white px-4 py-3 outline-none focus:border-emerald-500"
+              />
+              <button
+                type="submit"
+                className="w-full rounded-full bg-slate-950 px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
+              >
+                {t.send}
+              </button>
             </div>
-          </div>
+          </form>
         </div>
       </section>
       <SiteFooter />
