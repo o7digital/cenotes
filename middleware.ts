@@ -2,19 +2,26 @@ import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
 export function middleware(request: NextRequest) {
-  const requestHeaders = new Headers(request.headers);
-  const isSpanishPath =
-    request.nextUrl.pathname === "/es" || request.nextUrl.pathname.startsWith("/es/");
+  try {
+    const requestHeaders = new Headers(request.headers);
+    const path = request.nextUrl.pathname;
+    const isSpanishPath = path === "/es" || path.startsWith("/es/");
 
-  requestHeaders.set("x-locale", isSpanishPath ? "es" : "en");
+    requestHeaders.set("x-locale", isSpanishPath ? "es" : "en");
 
-  return NextResponse.next({
-    request: {
-      headers: requestHeaders,
-    },
-  });
+    return NextResponse.next({
+      request: {
+        headers: requestHeaders,
+      },
+    });
+  } catch {
+    return NextResponse.next();
+  }
 }
 
 export const config = {
-  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
+  matcher: [
+    // Skip API routes, Next internals, Vercel internals and static files.
+    "/((?!api|_next|_vercel|.*\\..*).*)",
+  ],
 };
