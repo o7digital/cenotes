@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import { LanguageProvider } from "../src/components/LanguageProvider";
 import "./globals.css";
 
@@ -10,7 +9,6 @@ const localBusinessSchema = {
   image: "https://www.cenotemaravilla.online/og-image.webp",
   url: "https://www.cenotemaravilla.online/",
   telephone: "+52 999 123 4567",
-  email: "reservas@cenotemaravilla.online",
   description:
     "Cenote Maravilla en Puerto Morelos, Quintana Roo. Cenotes, caballos y experiencias en la Ruta de los Cenotes, Riviera Maya.",
   priceRange: "$$",
@@ -35,7 +33,6 @@ const localBusinessSchema = {
       closes: "18:00",
     },
   ],
-  sameAs: ["https://www.instagram.com/", "https://www.facebook.com/"],
   areaServed: [
     "Puerto Morelos",
     "Ruta de los Cenotes",
@@ -144,16 +141,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const headerStore = await headers();
-  const locale = headerStore.get("x-locale") === "es" ? "es" : "en";
-
   return (
-    <html lang={locale}>
+    <html lang="en">
       <head>
         <script
           type="application/ld+json"

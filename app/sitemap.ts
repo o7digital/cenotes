@@ -1,60 +1,60 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
+  const contentLastUpdated = new Date("2026-04-30T00:00:00.000Z");
 
   return [
     {
       url: "https://www.cenotemaravilla.online/",
-      lastModified: now,
+      lastModified: contentLastUpdated,
       changeFrequency: "weekly",
       priority: 1,
     },
     {
       url: "https://www.cenotemaravilla.online/es/",
-      lastModified: now,
+      lastModified: contentLastUpdated,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: "https://www.cenotemaravilla.online/habitaciones",
-      lastModified: now,
+      lastModified: contentLastUpdated,
       changeFrequency: "weekly",
       priority: 0.7,
     },
     {
       url: "https://www.cenotemaravilla.online/es/habitaciones",
-      lastModified: now,
+      lastModified: contentLastUpdated,
       changeFrequency: "weekly",
       priority: 0.7,
     },
     {
       url: "https://www.cenotemaravilla.online/reservar",
-      lastModified: now,
+      lastModified: contentLastUpdated,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: "https://www.cenotemaravilla.online/cenotes-puerto-morelos",
-      lastModified: now,
+      lastModified: contentLastUpdated,
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: "https://www.cenotemaravilla.online/es/cenotes-puerto-morelos",
-      lastModified: now,
+      lastModified: contentLastUpdated,
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: "https://www.cenotemaravilla.online/tour-cenote-caballos",
-      lastModified: now,
+      lastModified: contentLastUpdated,
       changeFrequency: "weekly",
       priority: 0.8,
     },
     {
       url: "https://www.cenotemaravilla.online/es/tour-cenote-caballos",
-      lastModified: now,
+      lastModified: contentLastUpdated,
       changeFrequency: "weekly",
       priority: 0.8,
     },

@@ -8,7 +8,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "/reservar",
     languages: {
-      en: "/#contact",
       es: "/reservar",
       "x-default": "/reservar",
     },
