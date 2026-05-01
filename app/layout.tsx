@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import { LanguageProvider } from "../src/components/LanguageProvider";
 import "./globals.css";
 
@@ -142,16 +141,13 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const headerStore = await headers();
-  const locale = headerStore.get("x-locale") === "es" ? "es" : "en";
-
   return (
-    <html lang={locale}>
+    <html lang="en">
       <head>
         <script
           type="application/ld+json"
