@@ -12,28 +12,28 @@ const cenotePhotos = Array.from({ length: 9 }, (_, i) =>
 
 const cenotes = [
   {
-    nameEn: "Verde Escondido Cenote",
-    nameEs: "Cenote Verde Escondido",
-    descriptionEn: "An ideal natural space for swimming and relaxing.",
-    descriptionEs: "Un espacio natural ideal para nadar y relajarte.",
-    tagEn: "Nature & Swimming",
-    tagEs: "Naturaleza y nado",
+    nameEn: "The Mystic Abyss",
+    nameEs: "El Abismo Místico",
+    subtitleEn: "Snorkeling and freediving",
+    subtitleEs: "Buceo y apnea",
+    descriptionEn:
+      "A sanctuary for lovers of the depths. This cenote, with a discreet entrance, opens underground like a true subterranean ocean. Megalodon teeth were recently found here and are now exhibited at the Tulum museum.",
+    descriptionEs:
+      "Un santuario para los amantes de las profundidades. Este cenote, de entrada discreta, se abre bajo tierra como un verdadero océano subterráneo. Recientemente se encontraron dientes de megalodon que ahora son exhibidos en el museo de Tulum.",
+    tagEn: "Depth & Discovery",
+    tagEs: "Profundidad y descubrimiento",
   },
   {
-    nameEn: "Cristal Maya Cenote",
-    nameEs: "Cenote Cristal Maya",
-    descriptionEn: "Perfect for clear water, photos and a calm experience.",
-    descriptionEs: "Perfecto por su agua clara, fotos y ambiente relajado.",
-    tagEn: "Crystal Waters",
-    tagEs: "Aguas cristalinas",
-  },
-  {
-    nameEn: "Aventura Azul Cenote",
-    nameEs: "Cenote Aventura Azul",
-    descriptionEn: "A light adventure with memorable outdoor moments.",
-    descriptionEs: "Una aventura ligera con momentos inolvidables al aire libre.",
-    tagEn: "Adventure",
-    tagEs: "Aventura",
+    nameEn: "The Family Oasis",
+    nameEs: "El Oasis Familiar",
+    subtitleEn: "Recreational",
+    subtitleEs: "Recreativo",
+    descriptionEn:
+      "Designed for everyone to enjoy. With depths ranging from 80 cm to 5 meters, it is perfect for swimming safely and having a great time.",
+    descriptionEs:
+      "Diseñado para el disfrute de todos. Con profundidades que van desde los 80 cm hasta los 5 metros, es perfecto para nadar con seguridad y divertirse en grande.",
+    tagEn: "Family swimming",
+    tagEs: "Nado familiar",
   },
 ];
 
@@ -118,9 +118,9 @@ export default function PuertoMorelosCenotesTemplate() {
     ctaExplore: lang === "es" ? "Explorar cenotes" : "Explore cenotes",
     ctaContact: lang === "es" ? "Solicitar información" : "Request information",
     featured: lang === "es" ? "Experiencia destacada" : "Featured experience",
-    aboutTitle: lang === "es" ? "Entre selva, cenotes y espíritu caribeño" : "Between jungle, cenotes and Caribbean spirit",
+    aboutTitle: lang === "es" ? "Puerto Morelos, auténtico Caribe Mexicano" : "Puerto Morelos, the authentic Mexican Caribbean",
     aboutKicker: lang === "es" ? "Sobre Puerto Morelos" : "About Puerto Morelos",
-    cenotesTitle: lang === "es" ? "Cenotes destacados" : "Featured cenotes",
+    cenotesTitle: lang === "es" ? "Nuestros Cenotes: Dos Mundos por Descubrir" : "Our Cenotes: Two Worlds to Discover",
     cenotesIntro:
       lang === "es"
         ? "Puerto Morelos es un tranquilo pueblo pesquero en el Caribe Mexicano, ubicado entre Cancún y Playa del Carmen. Destaca por su ambiente relajado, familiar y auténtico, ideal para quienes buscan alejarse de las zonas hoteleras masivas."
@@ -202,7 +202,7 @@ export default function PuertoMorelosCenotesTemplate() {
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="text-4xl font-semibold md:text-5xl">{t.cenotesTitle}</h2>
           <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-600">{t.cenotesIntro}</p>
-          <div className="mt-12 grid gap-8 md:grid-cols-3">
+          <div className="mt-12 grid gap-8 md:grid-cols-2">
             {cenotes.map((cenote, index) => (
               <div key={cenote.nameEn} className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm">
                 <Image
@@ -217,6 +217,9 @@ export default function PuertoMorelosCenotesTemplate() {
                     {lang === "es" ? cenote.tagEs : cenote.tagEn}
                   </div>
                   <h3 className="mt-4 text-2xl font-semibold">{lang === "es" ? cenote.nameEs : cenote.nameEn}</h3>
+                  <p className="mt-2 text-sm font-semibold uppercase tracking-[0.18em] text-slate-500">
+                    {lang === "es" ? cenote.subtitleEs : cenote.subtitleEn}
+                  </p>
                   <p className="mt-4 leading-7 text-slate-600">{lang === "es" ? cenote.descriptionEs : cenote.descriptionEn}</p>
                   <a href="#contact" className="mt-6 inline-block text-sm font-semibold text-emerald-700">{t.moreInfo}</a>
                 </div>
