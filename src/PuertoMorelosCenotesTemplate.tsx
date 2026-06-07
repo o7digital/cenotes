@@ -121,6 +121,10 @@ export default function PuertoMorelosCenotesTemplate() {
     aboutTitle: lang === "es" ? "Entre selva, cenotes y espíritu caribeño" : "Between jungle, cenotes and Caribbean spirit",
     aboutKicker: lang === "es" ? "Sobre Puerto Morelos" : "About Puerto Morelos",
     cenotesTitle: lang === "es" ? "Cenotes destacados" : "Featured cenotes",
+    cenotesIntro:
+      lang === "es"
+        ? "Puerto Morelos es un tranquilo pueblo pesquero en el Caribe Mexicano, ubicado entre Cancún y Playa del Carmen. Destaca por su ambiente relajado, familiar y auténtico, ideal para quienes buscan alejarse de las zonas hoteleras masivas."
+        : "Puerto Morelos is a peaceful fishing village in the Mexican Caribbean, located between Cancun and Playa del Carmen. It stands out for its relaxed, family-friendly and authentic atmosphere, ideal for visitors who want to step away from the large hotel zones.",
     expTitle: lang === "es" ? "Experiencias en Cenote Maravilla" : "Experiences at Cenote Maravilla",
     expKicker: lang === "es" ? "Experiencia" : "Experience",
     faqKicker: lang === "es" ? "Preguntas frecuentes" : "FAQ",
@@ -197,6 +201,7 @@ export default function PuertoMorelosCenotesTemplate() {
       <section id="cenotes" className="py-24">
         <div className="mx-auto max-w-7xl px-6">
           <h2 className="text-4xl font-semibold md:text-5xl">{t.cenotesTitle}</h2>
+          <p className="mt-5 max-w-4xl text-lg leading-8 text-slate-600">{t.cenotesIntro}</p>
           <div className="mt-12 grid gap-8 md:grid-cols-3">
             {cenotes.map((cenote, index) => (
               <div key={cenote.nameEn} className="overflow-hidden rounded-[2rem] border border-slate-200 bg-white shadow-sm">
