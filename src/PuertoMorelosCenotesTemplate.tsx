@@ -45,6 +45,7 @@ const experiencesByLang = {
     "Tours privados o en grupo",
     "Momentos para fotos en un entorno natural",
     "Descubrimiento local desde la Riviera Maya",
+    "... y muchas más experiencias",
   ],
   en: [
     "Freshwater swimming",
@@ -53,6 +54,7 @@ const experiencesByLang = {
     "Private or group tours",
     "Photo moments in a natural setting",
     "Local discovery from the Riviera Maya",
+    "... and many more experiences",
   ],
 } as const;
 
