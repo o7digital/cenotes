@@ -39,29 +39,29 @@ export default function HabitacionesPage() {
   };
 
   return (
-    <main className="min-h-screen bg-[radial-gradient(circle_at_top,#134e4a_0%,#0f172a_45%,#020617_100%)] text-white">
+    <main className="min-h-screen bg-stone-50 text-slate-900">
       <SiteHeader ctaHref="/#contact" />
 
       <section className="mx-auto max-w-6xl px-6 pb-16 pt-28 md:pt-32">
         <div className="mb-8 text-center">
-          <p className="text-xs uppercase tracking-[0.3em] text-emerald-300">{copy.kicker}</p>
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-emerald-700">{copy.kicker}</p>
           <h1 className="mt-3 text-4xl font-semibold md:text-6xl">{copy.title}</h1>
-          <p className="mx-auto mt-4 max-w-3xl text-base leading-8 text-white/80 md:text-lg">{copy.intro}</p>
+          <p className="mx-auto mt-4 max-w-3xl text-base leading-8 text-slate-600 md:text-lg">{copy.intro}</p>
         </div>
 
         <div className="mb-10 grid gap-5 md:grid-cols-2">
-          <article className="rounded-[1.75rem] border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur">
+          <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
             <h2 className="text-2xl font-semibold">{copy.furnishedTitle}</h2>
-            <p className="mt-4 leading-8 text-white/78">{copy.furnishedText}</p>
-            <p className="mt-4 leading-8 text-emerald-100">{copy.roofText}</p>
+            <p className="mt-4 leading-8 text-slate-600">{copy.furnishedText}</p>
+            <p className="mt-4 leading-8 text-emerald-800">{copy.roofText}</p>
           </article>
-          <article className="rounded-[1.75rem] border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur">
+          <article className="rounded-[1.75rem] border border-slate-200 bg-white p-6 shadow-sm">
             <h2 className="text-2xl font-semibold">{copy.roomsTitle}</h2>
-            <p className="mt-4 leading-8 text-white/78">{copy.roomsText}</p>
+            <p className="mt-4 leading-8 text-slate-600">{copy.roomsText}</p>
           </article>
         </div>
 
-        <p className="mb-5 text-center text-sm uppercase tracking-[0.24em] text-white/60">{copy.gallery}</p>
+        <p className="mb-5 text-center text-sm font-semibold uppercase tracking-[0.24em] text-slate-500">{copy.gallery}</p>
         <PhotoSlider images={sliderImages} />
       </section>
 
