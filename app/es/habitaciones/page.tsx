@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import HabitacionesPage from "../../habitaciones/page";
 
 export const metadata: Metadata = {
-  title: "Galería de Habitaciones | Cenote Maravilla",
+  title: "Hospedaje | Cenote Maravilla",
   description:
-    "Explora la galería de habitaciones de Cenote Maravilla en Puerto Morelos. Revisa fotos de alojamientos disponibles cerca de la Ruta de los Cenotes.",
+    "Descubre el hospedaje de Cenote Maravilla en Puerto Morelos. Departamento amueblado, habitaciones personalizadas y alojamiento en la selva cerca de la Ruta de los Cenotes.",
   alternates: {
     canonical: "/es/habitaciones",
     languages: {
@@ -14,9 +14,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Galería de Habitaciones | Cenote Maravilla",
+    title: "Hospedaje | Cenote Maravilla",
     description:
-      "Explora la galería de habitaciones de Cenote Maravilla en Puerto Morelos. Revisa fotos de alojamientos disponibles cerca de la Ruta de los Cenotes.",
+      "Descubre el hospedaje de Cenote Maravilla en Puerto Morelos. Departamento amueblado, habitaciones personalizadas y alojamiento en la selva cerca de la Ruta de los Cenotes.",
     url: "https://www.cenotemaravilla.online/es/habitaciones",
     locale: "es_MX",
     type: "website",
@@ -24,15 +24,15 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://www.cenotemaravilla.online/og-image.webp",
-        alt: "Galería de habitaciones en Cenote Maravilla",
+        alt: "Hospedaje en Cenote Maravilla",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Galería de Habitaciones | Cenote Maravilla",
+    title: "Hospedaje | Cenote Maravilla",
     description:
-      "Explora la galería de habitaciones de Cenote Maravilla en Puerto Morelos. Revisa fotos de alojamientos disponibles cerca de la Ruta de los Cenotes.",
+      "Descubre el hospedaje de Cenote Maravilla en Puerto Morelos. Departamento amueblado, habitaciones personalizadas y alojamiento en la selva cerca de la Ruta de los Cenotes.",
     images: ["https://www.cenotemaravilla.online/og-image.webp"],
   },
 };

@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Rooms Gallery | Cenote Maravilla",
+  title: "Lodging | Cenote Maravilla",
   description:
-    "Browse the rooms gallery at Cenote Maravilla in Puerto Morelos. Explore photos of available accommodations near the Ruta de los Cenotes.",
+    "Discover lodging at Cenote Maravilla in Puerto Morelos. Furnished apartment, personalized rooms and jungle accommodations near the Ruta de los Cenotes.",
   alternates: {
     canonical: "/habitaciones",
     languages: {
@@ -13,9 +13,9 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Rooms Gallery | Cenote Maravilla",
+    title: "Lodging | Cenote Maravilla",
     description:
-      "Browse the rooms gallery at Cenote Maravilla in Puerto Morelos. Explore photos of available accommodations near the Ruta de los Cenotes.",
+      "Discover lodging at Cenote Maravilla in Puerto Morelos. Furnished apartment, personalized rooms and jungle accommodations near the Ruta de los Cenotes.",
     url: "https://www.cenotemaravilla.online/habitaciones",
     locale: "en_US",
     type: "website",
@@ -23,15 +23,15 @@ export const metadata: Metadata = {
     images: [
       {
         url: "https://www.cenotemaravilla.online/og-image.webp",
-        alt: "Rooms gallery at Cenote Maravilla",
+        alt: "Lodging at Cenote Maravilla",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Rooms Gallery | Cenote Maravilla",
+    title: "Lodging | Cenote Maravilla",
     description:
-      "Browse the rooms gallery at Cenote Maravilla in Puerto Morelos. Explore photos of available accommodations near the Ruta de los Cenotes.",
+      "Discover lodging at Cenote Maravilla in Puerto Morelos. Furnished apartment, personalized rooms and jungle accommodations near the Ruta de los Cenotes.",
     images: ["https://www.cenotemaravilla.online/og-image.webp"],
   },
 };

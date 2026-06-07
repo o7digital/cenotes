@@ -11,6 +11,32 @@ const sliderImages = Array.from({ length: 40 }, (_, i) =>
 
 export default function HabitacionesPage() {
   const { lang } = useLanguage();
+  const copy = {
+    kicker: lang === "es" ? "Hospedaje" : "Lodging",
+    title: lang === "es" ? "Hospedaje: Tu Hogar en la Selva" : "Lodging: Your Place in the Jungle",
+    intro:
+      lang === "es"
+        ? "Extiende tu visita y despierta con el canto de las aves en nuestras acogedoras instalaciones."
+        : "Extend your visit and wake up to birdsong in our welcoming jungle accommodations.",
+    furnishedTitle: lang === "es" ? "Departamento Amueblado" : "Furnished Apartment",
+    furnishedText:
+      lang === "es"
+        ? "2 recámaras con todas las comodidades de un hotel: aire acondicionado, agua caliente, TV y vista panorámica al bosque."
+        : "Two bedrooms with all the comforts of a hotel: air conditioning, hot water, TV and panoramic forest views.",
+    roofText:
+      lang === "es"
+        ? "Acceso exclusivo a nuestro Roof Garden con palapa de descanso."
+        : "Exclusive access to our roof garden with a shaded palapa for relaxing.",
+    roomsTitle: lang === "es" ? "Habitaciones Personalizadas" : "Personalized Rooms",
+    roomsText:
+      lang === "es"
+        ? "Pregunta por opciones con camas matrimoniales, clima y frigobar, ideales para una estancia confortable y directa en la naturaleza."
+        : "Ask about options with double beds, air conditioning and mini fridge, ideal for a comfortable stay directly in nature.",
+    gallery:
+      lang === "es"
+        ? "Desliza para ver fotos de nuestras opciones de hospedaje."
+        : "Slide to browse photos of our lodging options.",
+  };
 
   return (
     <main className="min-h-screen bg-[radial-gradient(circle_at_top,#134e4a_0%,#0f172a_45%,#020617_100%)] text-white">
@@ -18,19 +44,24 @@ export default function HabitacionesPage() {
 
       <section className="mx-auto max-w-6xl px-6 pb-16 pt-28 md:pt-32">
         <div className="mb-8 text-center">
-          <p className="text-xs uppercase tracking-[0.3em] text-emerald-300">
-            {lang === "es" ? "Habitaciones" : "Rooms"}
-          </p>
-          <h1 className="mt-3 text-4xl font-semibold md:text-6xl">
-            {lang === "es" ? "Galería de Habitaciones" : "Rooms Gallery"}
-          </h1>
-          <p className="mx-auto mt-4 max-w-2xl text-base text-white/80 md:text-lg">
-            {lang === "es"
-              ? "Desliza para ver todas las fotos disponibles de habitaciones."
-              : "Slide to browse all available room photos."}
-          </p>
+          <p className="text-xs uppercase tracking-[0.3em] text-emerald-300">{copy.kicker}</p>
+          <h1 className="mt-3 text-4xl font-semibold md:text-6xl">{copy.title}</h1>
+          <p className="mx-auto mt-4 max-w-3xl text-base leading-8 text-white/80 md:text-lg">{copy.intro}</p>
         </div>
 
+        <div className="mb-10 grid gap-5 md:grid-cols-2">
+          <article className="rounded-[1.75rem] border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur">
+            <h2 className="text-2xl font-semibold">{copy.furnishedTitle}</h2>
+            <p className="mt-4 leading-8 text-white/78">{copy.furnishedText}</p>
+            <p className="mt-4 leading-8 text-emerald-100">{copy.roofText}</p>
+          </article>
+          <article className="rounded-[1.75rem] border border-white/10 bg-white/10 p-6 shadow-2xl backdrop-blur">
+            <h2 className="text-2xl font-semibold">{copy.roomsTitle}</h2>
+            <p className="mt-4 leading-8 text-white/78">{copy.roomsText}</p>
+          </article>
+        </div>
+
+        <p className="mb-5 text-center text-sm uppercase tracking-[0.24em] text-white/60">{copy.gallery}</p>
         <PhotoSlider images={sliderImages} />
       </section>
 
