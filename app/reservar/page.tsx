@@ -4,7 +4,7 @@ import Link from "next/link";
 export const metadata: Metadata = {
   title: "Reservar Visita | Cenote Maravilla",
   description:
-    "Reserva tu visita a Cenote Maravilla en Puerto Morelos. Tours de cenote, paseo a caballo y experiencias privadas en la Ruta de los Cenotes.",
+    "Reserva tu visita a Cenote Maravilla en Puerto Morelos. Tours de cenote y experiencias privadas en la Ruta de los Cenotes.",
   alternates: {
     canonical: "/reservar",
     languages: {
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Reservar Visita | Cenote Maravilla",
     description:
-      "Reserva tu visita a Cenote Maravilla en Puerto Morelos. Tours de cenote, paseo a caballo y experiencias privadas en la Ruta de los Cenotes.",
+      "Reserva tu visita a Cenote Maravilla en Puerto Morelos. Tours de cenote y experiencias privadas en la Ruta de los Cenotes.",
     url: "https://www.cenotemaravilla.online/reservar",
     locale: "es_MX",
     type: "website",
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
 const reservationSchema = {
   "@context": "https://schema.org",
   "@type": "Service",
-  serviceType: "Reserva de tour en cenote y caballos",
+  serviceType: "Reserva de tour en cenote",
   provider: {
     "@type": "LocalBusiness",
     name: "Cenote Maravilla",
@@ -43,7 +43,7 @@ export default function ReservarPage() {
       <div className="mx-auto max-w-3xl">
         <h1 className="text-4xl font-semibold md:text-5xl">Reservar visita</h1>
         <p className="mt-6 text-lg leading-8 text-slate-600">
-          Reserva tu visita a Cenote Maravilla para nado en cenote, paseo a caballo o experiencia privada.
+          Reserva tu visita a Cenote Maravilla para nado en cenote o experiencia privada.
         </p>
         <div className="mt-10 flex flex-wrap gap-4">
           <a

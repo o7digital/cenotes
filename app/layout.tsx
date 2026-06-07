@@ -11,7 +11,7 @@ const localBusinessSchema = {
   url: "https://www.cenotemaravilla.online/",
   telephone: "+52 999 123 4567",
   description:
-    "Cenote Maravilla en Puerto Morelos, Quintana Roo. Cenotes, caballos y experiencias en la Ruta de los Cenotes, Riviera Maya.",
+    "Cenote Maravilla en Puerto Morelos, Quintana Roo. Cenotes y experiencias en la Ruta de los Cenotes, Riviera Maya.",
   priceRange: "$$",
   address: {
     "@type": "PostalAddress",
@@ -43,12 +43,10 @@ const localBusinessSchema = {
   knowsAbout: [
     "cenotes en Puerto Morelos",
     "Ruta de los Cenotes",
-    "caballos en Puerto Morelos",
     "experiencias en la selva",
     "Riviera Maya",
     "cenote in Puerto Morelos",
     "cenote tour Puerto Morelos",
-    "horseback riding Puerto Morelos",
     "jungle tour Puerto Morelos",
     "cenotes near Cancun",
   ],
@@ -60,7 +58,7 @@ const touristAttractionSchema = {
   name: "Cenote Maravilla",
   url: "https://www.cenotemaravilla.online/",
   description:
-    "Natural cenote attraction in Puerto Morelos with swimming, horseback riding and jungle experiences.",
+    "Natural cenote attraction in Puerto Morelos with swimming and jungle experiences.",
   image: "https://www.cenotemaravilla.online/og-image.webp",
   touristType: ["Families", "Couples", "Groups", "Adventure Travelers"],
   address: {
@@ -88,7 +86,7 @@ const faqSchema = {
       name: "What experiences are available?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Visitors can swim in crystal-clear cenote water, enjoy horseback riding and book private jungle experiences.",
+        text: "Visitors can swim in crystal-clear cenote water and book private jungle experiences.",
       },
     },
     {
@@ -109,7 +107,7 @@ export const metadata: Metadata = {
     template: "%s | Cenote Maravilla",
   },
   description:
-    "Discover Cenote Maravilla in Puerto Morelos, Mexico. Swim in crystal-clear cenotes, explore the Ruta de los Cenotes, enjoy horseback riding, jungle experiences and private tours in the Riviera Maya.",
+    "Discover Cenote Maravilla in Puerto Morelos, Mexico. Swim in crystal-clear cenotes, explore the Ruta de los Cenotes, enjoy jungle experiences and private tours in the Riviera Maya.",
   alternates: {
     canonical: "/",
     languages: {
@@ -121,7 +119,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Cenote Maravilla",
     description:
-      "Discover Cenote Maravilla in Puerto Morelos, Mexico. Swim in crystal-clear cenotes, explore the Ruta de los Cenotes, enjoy horseback riding, jungle experiences and private tours in the Riviera Maya.",
+      "Discover Cenote Maravilla in Puerto Morelos, Mexico. Swim in crystal-clear cenotes, explore the Ruta de los Cenotes, enjoy jungle experiences and private tours in the Riviera Maya.",
     url: "https://www.cenotemaravilla.online/",
     type: "website",
     siteName: "Cenote Maravilla",
@@ -137,7 +135,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Cenote Maravilla",
     description:
-      "Discover Cenote Maravilla in Puerto Morelos, Mexico. Swim in crystal-clear cenotes, explore the Ruta de los Cenotes, enjoy horseback riding, jungle experiences and private tours in the Riviera Maya.",
+      "Discover Cenote Maravilla in Puerto Morelos, Mexico. Swim in crystal-clear cenotes, explore the Ruta de los Cenotes, enjoy jungle experiences and private tours in the Riviera Maya.",
     images: ["https://www.cenotemaravilla.online/og-image.webp"],
   },
 };

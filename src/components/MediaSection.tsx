@@ -1,7 +1,7 @@
 import { sectionCopy } from "../data/siteContent";
 
 type MediaSectionProps = {
-  id: "cenotes" | "habitaciones" | "caballos";
+  id: "cenotes" | "habitaciones";
   photos: readonly string[];
   videos: readonly string[];
 };

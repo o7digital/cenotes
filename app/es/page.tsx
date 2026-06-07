@@ -4,7 +4,7 @@ import PuertoMorelosCenotesTemplate from "../../src/PuertoMorelosCenotesTemplate
 export const metadata: Metadata = {
   title: "Cenote Maravilla Puerto Morelos | Ruta de los Cenotes",
   description:
-    "Descubre Cenote Maravilla en Puerto Morelos, Quintana Roo. Nado en cenote, caballos, selva y experiencias privadas en la Ruta de los Cenotes, Riviera Maya.",
+    "Descubre Cenote Maravilla en Puerto Morelos, Quintana Roo. Nado en cenote, selva y experiencias privadas en la Ruta de los Cenotes, Riviera Maya.",
   keywords: [
     "cenote en Puerto Morelos",
     "cenotes en Puerto Morelos",
@@ -15,9 +15,6 @@ export const metadata: Metadata = {
     "cenote con agua cristalina Puerto Morelos",
     "tour cenotes Puerto Morelos",
     "tour privado cenote Puerto Morelos",
-    "paseo a caballo Puerto Morelos",
-    "paseo a caballo en la selva Puerto Morelos",
-    "tour cenote y caballos Puerto Morelos",
     "experiencia de selva Puerto Morelos",
     "cenotes cerca de Cancun",
     "cenotes Riviera Maya",
@@ -38,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Cenote Maravilla Puerto Morelos | Ruta de los Cenotes",
     description:
-      "Descubre Cenote Maravilla en Puerto Morelos, Quintana Roo. Nado en cenote, caballos, selva y experiencias privadas en la Ruta de los Cenotes, Riviera Maya.",
+      "Descubre Cenote Maravilla en Puerto Morelos, Quintana Roo. Nado en cenote, selva y experiencias privadas en la Ruta de los Cenotes, Riviera Maya.",
     url: "https://www.cenotemaravilla.online/es/",
     locale: "es_MX",
     type: "website",
@@ -53,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Cenote Maravilla Puerto Morelos | Ruta de los Cenotes",
     description:
-      "Descubre Cenote Maravilla en Puerto Morelos, Quintana Roo. Nado en cenote, caballos, selva y experiencias privadas en la Ruta de los Cenotes, Riviera Maya.",
+      "Descubre Cenote Maravilla en Puerto Morelos, Quintana Roo. Nado en cenote, selva y experiencias privadas en la Ruta de los Cenotes, Riviera Maya.",
     images: ["https://www.cenotemaravilla.online/og-image.webp"],
   },
 };

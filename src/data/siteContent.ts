@@ -18,7 +18,6 @@ export const siteContent = {
   featuredMedia: {
     heroCenote: "/cenotes/photos/cenotes-photo-004.webp",
     heroRoom: "/habitaciones/photos/habitaciones-photo-012.webp",
-    heroHorse: "/caballos/photos/caballos-photo-008.webp",
   },
 } as const;
 
@@ -32,11 +31,6 @@ export const sectionCopy = {
     title: "Habitaciones",
     description:
       "Espacios cómodos para descansar cerca de la naturaleza y planear tu escapada en Puerto Morelos.",
-  },
-  caballos: {
-    title: "Caballos",
-    description:
-      "Recorridos y convivencia al aire libre para complementar tu visita con una experiencia diferente.",
   },
 } as const;
 

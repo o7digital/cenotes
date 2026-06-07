@@ -13,9 +13,9 @@ export default function SiteHeader({ ctaHref = "#contact" }: SiteHeaderProps) {
   const t = {
     about: lang === "es" ? "Nosotros" : "About",
     cenotes: "Cenotes",
-    caballos: lang === "es" ? "Caballos" : "Horses",
     habitaciones: lang === "es" ? "Habitaciones" : "Rooms",
     experience: lang === "es" ? "Experiencia" : "Experience",
+    faq: lang === "es" ? "Preguntas frecuentes" : "FAQ",
     contact: lang === "es" ? "Contacto" : "Contact",
     reserve: lang === "es" ? "Reservar" : "Book now",
     tagline: lang === "es" ? "NATURALEZA • SELVA • RIVIERA MAYA" : "NATURE • JUNGLE • RIVIERA MAYA",
@@ -23,9 +23,9 @@ export default function SiteHeader({ ctaHref = "#contact" }: SiteHeaderProps) {
   const navItems = [
     { href: "/#cenotes", label: t.about },
     { href: "/#cenotes", label: t.cenotes },
-    { href: "/#caballos", label: t.caballos },
     { href: "/habitaciones", label: t.habitaciones },
     { href: "/#experience", label: t.experience },
+    { href: "/#faq", label: t.faq },
     { href: "/#contact", label: t.contact },
   ];
 

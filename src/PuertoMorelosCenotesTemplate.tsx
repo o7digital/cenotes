@@ -1,17 +1,13 @@
 "use client";
 
 import Image from "next/image";
+import { useState } from "react";
 import { useLanguage } from "./components/LanguageProvider";
-import PhotoSlider from "./components/PhotoSlider";
 import SiteFooter from "./components/SiteFooter";
 import SiteHeader from "./components/SiteHeader";
 
 const cenotePhotos = Array.from({ length: 9 }, (_, i) =>
   `/cenotes/photos/cenotes-photo-${String(i + 1).padStart(3, "0")}.webp`
-);
-
-const caballosPhotos = Array.from({ length: 35 }, (_, i) =>
-  `/caballos/photos/caballos-photo-${String(i + 1).padStart(3, "0")}.webp`
 );
 
 const cenotes = [
@@ -60,45 +56,54 @@ const experiencesByLang = {
   ],
 } as const;
 
-const horsePackagesByLang = {
+const faqsByLang = {
   es: [
     {
-      name: "Paseo Básico",
-      details: "Recorrido guiado a caballo por senderos naturales (30 min).",
-      price: "Desde $450 MXN / persona",
+      question: "¿Cuántos cenotes son?",
+      answer:
+        "Contamos con dos cenotes: uno ideal para experiencias de buceo profundo y otro familiar con capacidad para 250 personas, jardín, comedor, bancas con malla sombra, área de hamacas, baños y vestidores. La entrada incluye chalecos.",
     },
     {
-      name: "Paseo Aventura",
-      details: "Ruta extendida con paradas para fotos y descanso (60 min).",
-      price: "Desde $750 MXN / persona",
+      question: "¿Tienen algún restaurante o lugar para comer?",
+      answer:
+        "Contamos con restaurante en sitio, actualmente en remodelación, y renta de asadores para quienes prefieren cocinar su propia aventura.",
     },
     {
-      name: "Paquete Privado",
-      details: "Experiencia exclusiva para pareja, familia o grupo pequeño.",
-      price: "Cotización personalizada",
+      question: "¿Necesito estar certificado para hacer buceo?",
+      answer: "Sí, es necesaria la certificación de buceo.",
+    },
+    {
+      question: "¿Se cobra la entrada?",
+      answer:
+        "Sí, la entrada general tiene un costo de $250 MXN por persona. Pregunta por nuestros precios especiales para locales de Quintana Roo.",
     },
   ],
   en: [
     {
-      name: "Basic Ride",
-      details: "Guided horseback trail through natural paths (30 min).",
-      price: "From $450 MXN / person",
+      question: "How many cenotes are there?",
+      answer:
+        "There are two cenotes: one ideal for deep diving experiences and a family cenote with capacity for 250 people, garden, dining area, shaded benches, hammock area, bathrooms and changing rooms. Life vests are included with admission.",
     },
     {
-      name: "Adventure Ride",
-      details: "Extended route with photo and rest stops (60 min).",
-      price: "From $750 MXN / person",
+      question: "Do you have a restaurant or place to eat?",
+      answer:
+        "We have an on-site restaurant, currently being remodeled, and grill rentals for guests who prefer to cook their own adventure.",
     },
     {
-      name: "Private Package",
-      details: "Exclusive experience for couples, families, or small groups.",
-      price: "Custom quote",
+      question: "Do I need to be certified to dive?",
+      answer: "Yes, diving certification is required.",
+    },
+    {
+      question: "Is there an entrance fee?",
+      answer:
+        "Yes, general admission is $250 MXN per person. Ask about our special prices for Quintana Roo locals.",
     },
   ],
 } as const;
 
 export default function PuertoMorelosCenotesTemplate() {
   const { lang } = useLanguage();
+  const [openFaqIndex, setOpenFaqIndex] = useState(0);
 
   const t = {
     heroBadge: lang === "es" ? "Puerto Morelos • Ruta de Cenotes • Riviera Maya" : "Puerto Morelos · Ruta de los Cenotes · Riviera Maya",
@@ -108,38 +113,36 @@ export default function PuertoMorelosCenotesTemplate() {
         : "Discover one of the most beautiful cenote experiences in Puerto Morelos",
     heroSub:
       lang === "es"
-        ? "Nada en agua dulce cristalina, explora la belleza natural de la Ruta de los Cenotes y disfruta cabalgatas, paisajes de selva y tours privados en la Riviera Maya."
-        : "Swim in crystal-clear freshwater, explore the natural beauty of the Ruta de los Cenotes and enjoy horseback riding, jungle landscapes and private tours in the Riviera Maya.",
+        ? "Nada en agua dulce cristalina, explora la belleza natural de la Ruta de los Cenotes y disfruta paisajes de selva y tours privados en la Riviera Maya."
+        : "Swim in crystal-clear freshwater, explore the natural beauty of the Ruta de los Cenotes and enjoy jungle landscapes and private tours in the Riviera Maya.",
     ctaExplore: lang === "es" ? "Explorar cenotes" : "Explore cenotes",
     ctaContact: lang === "es" ? "Solicitar información" : "Request information",
     featured: lang === "es" ? "Experiencia destacada" : "Featured experience",
     aboutTitle: lang === "es" ? "Entre selva, cenotes y espíritu caribeño" : "Between jungle, cenotes and Caribbean spirit",
     aboutKicker: lang === "es" ? "Sobre Puerto Morelos" : "About Puerto Morelos",
     cenotesTitle: lang === "es" ? "Cenotes destacados" : "Featured cenotes",
-    caballosTitle: lang === "es" ? "Caballos" : "Horses",
-    caballosSub:
-      lang === "es"
-        ? "Recorridos y convivencia con caballos en un entorno natural de Puerto Morelos."
-        : "Horse experiences in a natural setting in Puerto Morelos.",
-    horsePackagesKicker: lang === "es" ? "Tarifas" : "Pricing",
-    horsePackagesTitle: lang === "es" ? "Paquetes de Caballos" : "Horse Packages",
-    quoteWhatsapp: lang === "es" ? "Cotizar por WhatsApp" : "Quote on WhatsApp",
     expTitle: lang === "es" ? "Experiencias en Cenote Maravilla" : "Experiences at Cenote Maravilla",
     expKicker: lang === "es" ? "Experiencia" : "Experience",
+    faqKicker: lang === "es" ? "Preguntas frecuentes" : "FAQ",
+    faqTitle: lang === "es" ? "Todo lo que necesitas saber antes de venir" : "Everything to know before visiting",
+    faqIntro:
+      lang === "es"
+        ? "Respuestas rápidas para planear tu visita con claridad."
+        : "Quick answers to help you plan your visit clearly.",
     contactKicker: lang === "es" ? "Contacto" : "Contact",
     contactTitle: "Plan your visit to Cenote Maravilla",
     name: lang === "es" ? "Nombre" : "Name",
     email: lang === "es" ? "Correo" : "Email",
     message:
       lang === "es"
-        ? "Contáctanos para reservar tu experiencia en cenote, tour a caballo o escapada privada en la selva en Puerto Morelos."
-        : "Contact us to book your cenote experience, horseback riding tour or private jungle escape in Puerto Morelos.",
+        ? "Contáctanos para reservar tu experiencia en cenote o escapada privada en la selva en Puerto Morelos."
+        : "Contact us to book your cenote experience or private jungle escape in Puerto Morelos.",
     send: lang === "es" ? "Enviar solicitud" : "Send request",
     moreInfo: lang === "es" ? "Más información" : "More information",
   };
 
   const experiences = experiencesByLang[lang];
-  const horsePackages = horsePackagesByLang[lang];
+  const faqs = faqsByLang[lang];
 
   return (
     <div className="min-h-screen bg-white text-slate-900">
@@ -218,39 +221,6 @@ export default function PuertoMorelosCenotesTemplate() {
         </div>
       </section>
 
-      <section id="caballos" className="bg-stone-50 py-24">
-        <div className="mx-auto max-w-7xl px-6">
-          <h2 className="text-4xl font-semibold md:text-5xl">{t.caballosTitle}</h2>
-          <p className="mt-4 text-lg leading-8 text-slate-600">{t.caballosSub}</p>
-          <div className="mt-12">
-            <PhotoSlider images={caballosPhotos} />
-          </div>
-
-          <div className="mt-14">
-            <p className="text-sm font-semibold uppercase tracking-[0.25em] text-amber-700">{t.horsePackagesKicker}</p>
-            <h3 className="mt-3 text-3xl font-semibold md:text-4xl">{t.horsePackagesTitle}</h3>
-
-            <div className="mt-8 grid gap-5 md:grid-cols-3">
-              {horsePackages.map((pkg) => (
-                <article key={pkg.name} className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-                  <h4 className="text-2xl font-semibold text-slate-900">{pkg.name}</h4>
-                  <p className="mt-3 text-lg leading-7 text-slate-600">{pkg.details}</p>
-                  <p className="mt-5 text-3xl font-semibold text-emerald-800">{pkg.price}</p>
-                  <a
-                    href="https://wa.me/"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="mt-6 inline-block rounded-full bg-black px-6 py-3 text-sm font-semibold text-white transition hover:opacity-90"
-                  >
-                    {t.quoteWhatsapp}
-                  </a>
-                </article>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section id="experience" className="bg-slate-950 py-24 text-white">
         <div className="mx-auto max-w-7xl px-6">
           <div className="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-300">{t.expKicker}</div>
@@ -261,6 +231,49 @@ export default function PuertoMorelosCenotesTemplate() {
                 <div className="text-lg font-medium leading-7">{item}</div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" className="bg-stone-50 py-24">
+        <div className="mx-auto grid max-w-7xl gap-12 px-6 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+          <div>
+            <div className="text-sm font-semibold uppercase tracking-[0.25em] text-emerald-700">{t.faqKicker}</div>
+            <h2 className="mt-4 text-4xl font-semibold leading-tight md:text-5xl">{t.faqTitle}</h2>
+            <p className="mt-5 max-w-md text-lg leading-8 text-slate-600">{t.faqIntro}</p>
+          </div>
+
+          <div className="border-y border-slate-300 bg-white">
+            {faqs.map((item, index) => {
+              const isOpen = openFaqIndex === index;
+
+              return (
+                <article key={item.question} className="border-b border-slate-200 last:border-b-0">
+                  <button
+                    type="button"
+                    aria-expanded={isOpen}
+                    onClick={() => setOpenFaqIndex(isOpen ? -1 : index)}
+                    className="flex w-full items-center justify-between gap-6 px-5 py-7 text-left md:px-8"
+                  >
+                    <span className="text-xl font-semibold leading-7 text-slate-950 md:text-2xl">{item.question}</span>
+                    <span
+                      aria-hidden="true"
+                      className={`grid h-11 w-11 shrink-0 place-items-center rounded-full border border-slate-300 text-3xl font-light leading-none text-emerald-800 transition ${isOpen ? "rotate-45 bg-emerald-800 text-white" : "bg-white"}`}
+                    >
+                      +
+                    </span>
+                  </button>
+
+                  <div
+                    className={`grid transition-all duration-300 ease-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}
+                  >
+                    <div className="overflow-hidden">
+                      <p className="px-5 pb-8 text-lg leading-8 text-slate-600 md:px-8">{item.answer}</p>
+                    </div>
+                  </div>
+                </article>
+              );
+            })}
           </div>
         </div>
       </section>

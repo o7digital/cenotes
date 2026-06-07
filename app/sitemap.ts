@@ -46,17 +46,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 0.8,
     },
-    {
-      url: "https://www.cenotemaravilla.online/tour-cenote-caballos",
-      lastModified: contentLastUpdated,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
-    {
-      url: "https://www.cenotemaravilla.online/es/tour-cenote-caballos",
-      lastModified: contentLastUpdated,
-      changeFrequency: "weekly",
-      priority: 0.8,
-    },
   ];
 }
