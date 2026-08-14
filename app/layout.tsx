@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Script from "next/script";
 import { LanguageProvider } from "../src/components/LanguageProvider";
+import OliviaChat from "../src/components/OliviaChat";
 import "./globals.css";
 
 const localBusinessSchema = {
@@ -171,7 +172,10 @@ export default function RootLayout({
         />
       </head>
       <body>
-        <LanguageProvider>{children}</LanguageProvider>
+        <LanguageProvider>
+          {children}
+          <OliviaChat />
+        </LanguageProvider>
       </body>
     </html>
   );
