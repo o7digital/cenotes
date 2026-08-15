@@ -3,6 +3,17 @@
 import { FormEvent, KeyboardEvent, useEffect, useMemo, useRef, useState } from "react";
 import { useLanguage } from "./LanguageProvider";
 
+function useOliviaFloatingTheme() {
+  useEffect(() => {
+    if (document.querySelector('script[data-olivia-floating-theme]')) return;
+    const script = document.createElement('script');
+    script.src = 'https://olivia-ai.o7digital.com/olivia-floating-theme.js';
+    script.defer = true;
+    script.dataset.oliviaFloatingTheme = 'true';
+    document.head.appendChild(script);
+  }, []);
+}
+
 type Message = { role: "assistant" | "user"; content: string };
 type Lead = { firstName: string; lastName: string; email: string; phone: string; need: string };
 
@@ -70,6 +81,7 @@ function createVisitorId() {
 }
 
 export default function OliviaChat() {
+  useOliviaFloatingTheme();
   const { lang } = useLanguage();
   const t = copy[lang];
   const [open, setOpen] = useState(false);
